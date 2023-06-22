@@ -97,13 +97,19 @@ namespace FarmingFeedingAppv2
             this.chart1.Titles.Add(title1);
             this.chart1.Titles.Add(title2);
             this.chart1.Titles.Add(title3);
+            
             for (int i = 0; i < sm.GetSheepBreeds().Count; i++)
             {
                 series.Add(new System.Windows.Forms.DataVisualization.Charting.Series());
                 series[series.Count -1].ChartArea = "ChartArea1";
                 series[series.Count -1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 series[series.Count -1].Legend = "Legend1";
-                series[series.Count -1].Name = sm.GetSheepBreeds()[i];
+                series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
+                foreach (var item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[i])
+                {
+                    series[series.Count - 1].Points.Add(item);
+                }
+             
                 this.chart1.Series.Add(series[series.Count - 1]);
             }
             // 

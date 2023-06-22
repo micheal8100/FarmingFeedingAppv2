@@ -68,6 +68,25 @@ namespace FarmingFeedingAppv2
             return true;
 
         }
+        // returns a list of the food per day per breed 
+        public List<List<int>> CalculatTotalCostPerBreedPerDay(float costPerGram)
+        {
+            List<List<int>> CostPerBreedPerDay = new List<List<int>> () {};
+            int sheepCount = 0;
+
+            foreach (Sheep sheep in sheeps)
+            {
+                for (int i = 0; i < sheepBreeds.Count(); i++)
+                {
+                    if (sheeps[sheepCount].getBreed() == sheepBreeds[i])
+                    {
+                        CostPerBreedPerDay.Add(sheep.getFoodPerDay());
+                    }
+                }
+                sheepCount++;
+            }
+            return CostPerBreedPerDay;
+        }
         // return sheepbreed list
         public List<string> GetSheepBreeds()
         {

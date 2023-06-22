@@ -39,6 +39,11 @@ namespace FarmingFeedingAppv2
         {
             return this.age;
         }
+        // Returns the value in the private age varible
+        public List<int> getFoodPerDay()
+        {
+            return FoodPerDay;
+        }
         // returns the value in the breed variable
         public string getBreed()
         {
