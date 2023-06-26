@@ -31,17 +31,10 @@ namespace FarmingFeedingAppv2
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            List<System.Windows.Forms.DataVisualization.Charting.Series> series = new List<System.Windows.Forms.DataVisualization.Charting.Series>();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.lblSheepStats = new System.Windows.Forms.Label();
             this.lblAllSummary = new System.Windows.Forms.Label();
             this.bunHome = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.bunSheepStatGraph = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSheepStats
@@ -67,7 +60,7 @@ namespace FarmingFeedingAppv2
             this.bunHome.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.bunHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunHome.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunHome.Location = new System.Drawing.Point(538, 367);
+            this.bunHome.Location = new System.Drawing.Point(599, 367);
             this.bunHome.Name = "bunHome";
             this.bunHome.Size = new System.Drawing.Size(189, 71);
             this.bunHome.TabIndex = 5;
@@ -75,66 +68,38 @@ namespace FarmingFeedingAppv2
             this.bunHome.UseVisualStyleBackColor = false;
             this.bunHome.Click += new System.EventHandler(this.bunHome_Click);
             // 
-            // chart1
+            // bunSheepStatGraph
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(488, 61);
-            this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 6;
-            this.chart1.Text = "chart1";
-            title1.Name = "Title";
-            title1.Text = "Sheep breeds";
-            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title2.Name = "food consumed";
-            title2.Text = "food consumed";
-            title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title3.Name = "Breeds";
-            title3.Text = "Breeds";
-            this.chart1.Titles.Add(title1);
-            this.chart1.Titles.Add(title2);
-            this.chart1.Titles.Add(title3);
-            
-            for (int i = 0; i < sm.GetSheepBreeds().Count; i++)
-            {
-                series.Add(new System.Windows.Forms.DataVisualization.Charting.Series());
-                series[series.Count -1].ChartArea = "ChartArea1";
-                series[series.Count -1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-                series[series.Count -1].Legend = "Legend1";
-                series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
-                foreach (var item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[i])
-                {
-                    series[series.Count - 1].Points.Add(item);
-                }
-             
-                this.chart1.Series.Add(series[series.Count - 1]);
-            }
+            this.bunSheepStatGraph.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunSheepStatGraph.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bunSheepStatGraph.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunSheepStatGraph.Location = new System.Drawing.Point(599, 290);
+            this.bunSheepStatGraph.Name = "bunSheepStatGraph";
+            this.bunSheepStatGraph.Size = new System.Drawing.Size(189, 71);
+            this.bunSheepStatGraph.TabIndex = 6;
+            this.bunSheepStatGraph.Text = "Graphs";
+            this.bunSheepStatGraph.UseVisualStyleBackColor = false;
+            this.bunSheepStatGraph.Click += new System.EventHandler(this.bunSheepStatGraph_Click);
             // 
             // SheepStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.bunSheepStatGraph);
             this.Controls.Add(this.bunHome);
             this.Controls.Add(this.lblAllSummary);
             this.Controls.Add(this.lblSheepStats);
             this.Name = "SheepStats";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SheepStats";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
-
         }
-
         #endregion
 
         private System.Windows.Forms.Label lblSheepStats;
         private System.Windows.Forms.Label lblAllSummary;
         private System.Windows.Forms.Button bunHome;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button bunSheepStatGraph;
     }
 }

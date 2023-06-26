@@ -32,5 +32,14 @@ namespace FarmingFeedingAppv2
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }
+
+        private void bunSheepStatGraph_Click(object sender, EventArgs e)
+        {
+            //closes form and opens a new one
+            this.Hide();
+            SheepStatGraph myNewForm = new SheepStatGraph(sm);
+            myNewForm.Closed += (s, args) => this.Close();
+            myNewForm.Show();
+        }
     }
 }
