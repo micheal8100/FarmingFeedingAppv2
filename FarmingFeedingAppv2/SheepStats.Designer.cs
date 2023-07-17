@@ -60,7 +60,7 @@ namespace FarmingFeedingAppv2
             this.bunHome.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.bunHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunHome.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunHome.Location = new System.Drawing.Point(599, 367);
+            this.bunHome.Location = new System.Drawing.Point(599, 355);
             this.bunHome.Name = "bunHome";
             this.bunHome.Size = new System.Drawing.Size(189, 71);
             this.bunHome.TabIndex = 5;
@@ -73,7 +73,7 @@ namespace FarmingFeedingAppv2
             this.bunSheepStatGraph.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.bunSheepStatGraph.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunSheepStatGraph.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunSheepStatGraph.Location = new System.Drawing.Point(599, 290);
+            this.bunSheepStatGraph.Location = new System.Drawing.Point(599, 278);
             this.bunSheepStatGraph.Name = "bunSheepStatGraph";
             this.bunSheepStatGraph.Size = new System.Drawing.Size(189, 71);
             this.bunSheepStatGraph.TabIndex = 6;
@@ -94,6 +94,7 @@ namespace FarmingFeedingAppv2
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SheepStats";
             this.ResumeLayout(false);
+
         }
         #endregion
 
