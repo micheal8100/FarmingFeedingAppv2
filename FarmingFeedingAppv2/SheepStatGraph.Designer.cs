@@ -122,11 +122,11 @@ namespace FarmingFeedingAppv2
                 series[series.Count - 1].Legend = "Legend1";
                 series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
 
-                foreach (List<List<int>> item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram()))
+                foreach (List<int> item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram()))
                 {
                     for (int a = 1; a < item.Count; a++)
                     {
-                        series[series.Count - 1].Points.Add(item[item.Count][a - 1], a);
+                        series[series.Count - 1].Points.Add(item[item.Count - a], a);
                     }
                 }
                 this.chart1.Series.Add(series[series.Count - 1]);
