@@ -12,13 +12,14 @@ namespace FarmingFeedingAppv2
         // All Sheep Breeds My Program Acounts For
         private List<string> sheepBreeds = new List<String>() { "Australian whites NZ", "Border Leicester", "Charollais"
             , "Corriedale", "Awassi" };
+        //to fill the cost per breed per day list in order 
 
-        //grain cost per 20kg
-        private float grainCost = 30;
+        private List<int> sheepSorter = new List<int> { };
 
         // list of all animals 
         private List<Sheep> sheeps = new List<Sheep>();
-
+        //grain cost
+        private int grainCost = 30;
 
 
         //constructor - cronstructs an object of this class
@@ -26,6 +27,12 @@ namespace FarmingFeedingAppv2
         {
 
         }
+        // gets the sheep sorter list
+        public List<int> getSheepSorter()
+        {
+            return sheepSorter;
+        }
+        
         // Check Age 0 < x > 40
         public bool CheckAge(int age)
         {
@@ -66,12 +73,10 @@ namespace FarmingFeedingAppv2
                 }
             }
             return true;
-
         }
         // returns a list of the food per day per breed 
         public List<List<int>> CalculatTotalCostPerBreedPerDay(float costPerGram)
-        {
-            List<int> sheepSorter = new List<int> { };
+        { 
             List<List<int>> CostPerBreedPerDay = new List<List<int>>() {};
             int sheepCount = 0;
 
@@ -79,27 +84,24 @@ namespace FarmingFeedingAppv2
             {
                 for (int i = 0; i < sheepBreeds.Count(); i++)
                 {
-                    
+                    // to check if its the breed of the sheep
                     if (sheep.getBreed() == sheepBreeds[i])
                     {
+                        //check if the user has allready added this sheep breed before
                         if (sheepSorter.Contains(i))
                         {
-
+                            // so that it stays in one list
+                            for (int c = 0; c < 6; c++)
+                            {
+                                CostPerBreedPerDay[i][c] += sheep.getFoodPerDay()[c];
+                            }
                         }
                         else
                         {
+                            //adding so that we can keep every thing in one list the next time we add a sheep with this breed 
                             sheepSorter.Add(i);
+                            CostPerBreedPerDay.Add(sheep.getFoodPerDay());
                         }
-                        if ()
-                        {
-
-                        }
-                        CostPerBreedPerDay.Insert(sheepSorter.IndexOf(i), sheep.getFoodPerDay());
-                      
-                        for (int c = 0; c < sheep.getFoodPerDay().Count; c++)
-                        {
-                                CostPerBreedPerDay[i][c] += sheep.getFoodPerDay()[c];
-                        }     
                         //stops the for loop
                         i = 10000;
                     }
@@ -116,6 +118,7 @@ namespace FarmingFeedingAppv2
         // calculates the cost per 1g
         public float CostPerGram()
         {
+            // 30m is around the cost per 20 kgs
             return grainCost / 20000;
         }
         // adds Sheep To The List Sheep list and runs the CalculattotalCostPerBreed() method
@@ -128,7 +131,7 @@ namespace FarmingFeedingAppv2
         {
             List<float> weeklyCostPerBreed = new List<float>() { 0, 0, 0, 0, 0 };
             int sheepCount = 0;
-
+            // so i gose though every sheep
             foreach (Sheep sheep in sheeps)
             {
                 for (int i = 0; i < sheepBreeds.Count(); i++)

@@ -120,16 +120,30 @@ namespace FarmingFeedingAppv2
                 series[series.Count - 1].ChartArea = "ChartArea1";
                 series[series.Count - 1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 series[series.Count - 1].Legend = "Legend1";
-                series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
-
-                foreach (List<int> item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram()))
+                
+                //it crashes if there is no i list
+                try
                 {
-                    for (int a = 1; a < item.Count; a++)
+                    foreach (int item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[i])
                     {
-                        series[series.Count - 1].Points.Add(item[item.Count - a], a);
+                        series[series.Count - 1].Points.Add(item);
                     }
                 }
+                catch
+                {}
+                if (sm.getSheepSorter().Contains(i))
+                {
+                    series[series.Count - 1].Name = sm.GetSheepBreeds()[sm.getSheepSorter()[i]];
+                }
+                else
+                {
+                    series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
+                }
+
                 this.chart1.Series.Add(series[series.Count - 1]);
+                
+                
+                
             }
             // 
             // SheepStatGraph
