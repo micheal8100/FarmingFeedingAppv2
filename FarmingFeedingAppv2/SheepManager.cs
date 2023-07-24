@@ -102,8 +102,6 @@ namespace FarmingFeedingAppv2
                             sheepSorter.Add(i);
                             CostPerBreedPerDay.Add(sheep.getFoodPerDay());
                         }
-                        //stops the for loop
-                        i = 10000;
                     }
                 }
                 sheepCount++;
