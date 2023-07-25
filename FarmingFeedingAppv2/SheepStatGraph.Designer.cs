@@ -108,8 +108,8 @@ namespace FarmingFeedingAppv2
             title2.Name = "food consumed";
             title2.Text = "food consumed";
             title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title3.Name = "Breeds";
-            title3.Text = "Breeds";
+            title3.Name = "Day";
+            title3.Text = "Day";
             this.chart1.Titles.Add(title1);
             this.chart1.Titles.Add(title2);
             this.chart1.Titles.Add(title3);
@@ -123,11 +123,16 @@ namespace FarmingFeedingAppv2
                 series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
                 
                 //it crashes if there is no i list
-
-                foreach(int item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[i])
-                {
+                try 
+	            {	        
+		            foreach(int item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[sm.getSheepSorter().IndexOf(i)])
+                    {
                     series[series.Count - 1].Points.Add(item);
-                }
+                    }
+	            }
+	            catch 
+	            {
+	            }
 
                 this.chart1.Series.Add(series[series.Count - 1]);
             }

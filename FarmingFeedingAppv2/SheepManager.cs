@@ -8,8 +8,7 @@ namespace FarmingFeedingAppv2
 {
     public class SheepManager
     {
-
-        // All Sheep Breeds My Program Acounts For
+         // All Sheep Breeds My Program Acounts For
         private List<string> sheepBreeds = new List<String>() { "Australian whites NZ", "Border Leicester", "Charollais"
             , "Corriedale", "Awassi" };
         //to fill the cost per breed per day list in order 
@@ -79,7 +78,9 @@ namespace FarmingFeedingAppv2
         { 
             List<List<int>> CostPerBreedPerDay = new List<List<int>>() {};
             int sheepCount = 0;
+            sheepSorter.Clear();
 
+            
             foreach (Sheep sheep in sheeps)
             {
                 for (int i = 0; i < sheepBreeds.Count(); i++)
@@ -88,25 +89,23 @@ namespace FarmingFeedingAppv2
                     if (sheep.getBreed() == sheepBreeds[i])
                     {
                         //check if the user has allready added this sheep breed before
-                        if (sheepSorter.Contains(i))
-                        {
-                            // so that it stays in one list
-                            for (int c = 0; c < 6; c++)
+                            if (sheepSorter.Contains(i))
                             {
-                                CostPerBreedPerDay[i][c] += sheep.getFoodPerDay()[c];
+                             // so that it stays in one list
+                             CostPerBreedPerDay[i].Zip(sheep.getFoodPerDay(), (x,y) => x + y).ToList());                          
                             }
-                        }
-                        else
-                        {
-                            //adding so that we can keep every thing in one list the next time we add a sheep with this breed 
-                            sheepSorter.Add(i);
-                            CostPerBreedPerDay.Add(sheep.getFoodPerDay());
-                        }
+                            else
+                            {
+                                //adding so that we can keep every thing in one list the next time we add a sheep with this breed 
+                                sheepSorter.Add(i);
+                                CostPerBreedPerDay.Add(sheep.getFoodPerDay());
+                            }
                     }
-                }
+                }   
                 sheepCount++;
             }
-            return CostPerBreedPerDay;
+            return CostPerBreedPerDay; 
+
         }
         // return sheepbreed list
         public List<string> GetSheepBreeds()
@@ -136,7 +135,7 @@ namespace FarmingFeedingAppv2
                 {
                     if (sheeps[sheepCount].getBreed() == sheepBreeds[i])
                     {
-                        weeklyCostPerBreed[i] += sheeps[sheepCount].costSum(costPerGram);
+                        weeklyCostPerBreed[i] += sheep[sheepCount].costSum(costPerGram);
                     }
                 }
                 sheepCount++;
@@ -178,5 +177,6 @@ namespace FarmingFeedingAppv2
         {
             return "Weekly Feeding Cost Summary\n\n" + allBreedCostSum(costPerGram) + "\nOverall Cost: $" + overAllCost(costPerGram);
         }
+       
     }
 }
