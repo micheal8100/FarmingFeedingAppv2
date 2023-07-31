@@ -17,8 +17,7 @@ namespace FarmingFeedingAppv2
 
         // list of all animals 
         private List<Sheep> sheeps = new List<Sheep>();
-        //grain cost
-        private int grainCost = 30;
+       
 
 
         //constructor - cronstructs an object of this class
@@ -73,7 +72,7 @@ namespace FarmingFeedingAppv2
             }
             return true;
         }
-        // returns a list of the food per day per breed 
+        // returns a list of the food per day per breed for graph
         public List<List<int>> CalculatTotalCostPerBreedPerDay(float costPerGram)
         { 
             List<List<int>> CostPerBreedPerDay = new List<List<int>>() {};
@@ -89,17 +88,23 @@ namespace FarmingFeedingAppv2
                     if (sheep.getBreed() == sheepBreeds[i])
                     {
                         //check if the user has allready added this sheep breed before
-                            if (sheepSorter.Contains(i))
+                        if (sheepSorter.Contains(i))
+                        {
+                            // so that it stays in one list
+                            CostPerBreedPerDay[i] = CostPerBreedPerDay[i].Zip(sheep.getFoodPerDay(), (x, y) => x + y).ToList();
+
+                            for (int miniIndex = 0; miniIndex < CostPerBreedPerDay[i].Count; miniIndex++)
                             {
-                             // so that it stays in one list
-                             CostPerBreedPerDay[i].Zip(sheep.getFoodPerDay(), (x,y) => x + y).ToList());                          
+                                CostPerBreedPerDay
                             }
-                            else
-                            {
-                                //adding so that we can keep every thing in one list the next time we add a sheep with this breed 
-                                sheepSorter.Add(i);
-                                CostPerBreedPerDay.Add(sheep.getFoodPerDay());
-                            }
+                            
+                        }
+                        else
+                        {
+                            //adding so that we can keep every thing in one list the next time we add a sheep with this breed 
+                            sheepSorter.Add(i);
+                            CostPerBreedPerDay.Add(sheep.getFoodPerDay());
+                        }
                     }
                 }   
                 sheepCount++;
@@ -112,11 +117,11 @@ namespace FarmingFeedingAppv2
         {
             return sheepBreeds;
         }
-        // calculates the cost per 1g
+        // stores the cost per 1g in a method so all calculations use the same number
         public float CostPerGram()
         {
-            // 30m is around the cost per 20 kgs
-            return grainCost / 20000;
+            // 0.0015 is around the cost for 1 gram of grain 
+            return 0.0015f;
         }
         // adds Sheep To The List Sheep list and runs the CalculattotalCostPerBreed() method
         public void addSheep(Sheep Sheep)
@@ -135,7 +140,7 @@ namespace FarmingFeedingAppv2
                 {
                     if (sheeps[sheepCount].getBreed() == sheepBreeds[i])
                     {
-                        weeklyCostPerBreed[i] += sheep[sheepCount].costSum(costPerGram);
+                        weeklyCostPerBreed[i] += sheeps[sheepCount].costSum(costPerGram);
                     }
                 }
                 sheepCount++;
