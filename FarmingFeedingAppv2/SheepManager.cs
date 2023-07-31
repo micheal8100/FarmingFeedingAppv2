@@ -91,11 +91,11 @@ namespace FarmingFeedingAppv2
                         if (sheepSorter.Contains(i))
                         {
                             // so that it stays in one list
-                            CostPerBreedPerDay[i] = CostPerBreedPerDay[i].Zip(sheep.getFoodPerDay(), (x, y) => x + y).ToList();
+                            // CostPerBreedPerDay[i] = CostPerBreedPerDay[i].Zip(sheep.getFoodPerDay(), (x, y) => x + y).ToList();
 
-                            for (int miniIndex = 0; miniIndex < CostPerBreedPerDay[i].Count; miniIndex++)
+                            for (int y = 0; y < CostPerBreedPerDay[i].Count; y++)
                             {
-                                CostPerBreedPerDay
+                                CostPerBreedPerDay[y] += Sheep.getFoodPerDay()[y]
                             }
                             
                         }
