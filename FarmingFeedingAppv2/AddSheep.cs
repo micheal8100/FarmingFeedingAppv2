@@ -43,20 +43,10 @@ namespace FarmingFeedingAppv2
             {
                 if (FoodConsumed[i] <= 0)
                 {
-                    // finds out witchs days are missing a value and adds it to the message
-                    string valueNullMessage = "";
-                    for (int a = 0; a < 7; a++)
-                    {
-                        if (FoodConsumed[a] == 0)
-                        {
-                            valueNullMessage += (a + 1) + " ";
-                        }
-                        
-                    }
                     
 
                     // button to ask if they meant leave food Nud Blank or did it by accident
-                    DialogResult dialogResult = MessageBox.Show("Did you mean to not enter a value on\nday " + valueNullMessage , "ERROR", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Some days are missing values did you mean this?" , "ERROR", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         // if yes cancels while loop becuse they meant to

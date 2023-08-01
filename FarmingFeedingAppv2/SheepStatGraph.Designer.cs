@@ -114,6 +114,7 @@ namespace FarmingFeedingAppv2
             this.chart1.Titles.Add(title2);
             this.chart1.Titles.Add(title3);
             List<int> seriesColor = new List<int> { };
+            
             for (int i = 0; i < sm.GetSheepBreeds().Count; i++)
             {
                 series.Add(new System.Windows.Forms.DataVisualization.Charting.Series());
