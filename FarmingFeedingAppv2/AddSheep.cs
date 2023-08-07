@@ -43,8 +43,6 @@ namespace FarmingFeedingAppv2
             {
                 if (FoodConsumed[i] <= 0)
                 {
-                    
-
                     // button to ask if they meant leave food Nud Blank or did it by accident
                     DialogResult dialogResult = MessageBox.Show("Some days are missing values did you mean this?" , "ERROR", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
@@ -58,7 +56,6 @@ namespace FarmingFeedingAppv2
                         // if no puts them back onto the form without doing anything
                         return;
                     }
-
                 }
             }
 

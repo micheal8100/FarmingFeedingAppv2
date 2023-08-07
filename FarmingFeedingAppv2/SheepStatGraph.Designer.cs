@@ -88,8 +88,6 @@ namespace FarmingFeedingAppv2
             this.bunSheepStats.Text = "Sheep Stats";
             this.bunSheepStats.UseVisualStyleBackColor = false;
             this.bunSheepStats.Click += new System.EventHandler(this.bunSheepStats_Click);
-            
-
             // 
             // chart1
             // 
@@ -103,7 +101,7 @@ namespace FarmingFeedingAppv2
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
             title1.Name = "Title";
-            title1.Text = "Sheep breeds";
+            title1.Text = "Sheep breeds food consumed";
             title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             title2.Name = "food consumed";
             title2.Text = "food consumed";
@@ -122,11 +120,11 @@ namespace FarmingFeedingAppv2
                 series[series.Count - 1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 series[series.Count - 1].Legend = "Legend1";
                 series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
-                
+ 
                 //it crashes if there is no i list
-                try 
-	            {	        
-		            foreach(int item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[sm.getSheepSorter().IndexOf(i)])
+                try
+                {
+                    foreach (int item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[sm.getSheepSorter().IndexOf(i)])
                     {
                         series[series.Count - 1].Points.Add(item);
                     }
