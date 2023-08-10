@@ -19,7 +19,7 @@ namespace FarmingFeedingAppv2
             this.sm = sm;
             InitializeComponent();
             //populates the lblBreedSum lable with the sumarry in sm
-            lblAllSummary.Text = sm.allSummary(sm.CostPerGram());
+            lblAllSummary.Text = sm.allSummary();
           
         }
 

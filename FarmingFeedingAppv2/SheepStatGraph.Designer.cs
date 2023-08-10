@@ -124,9 +124,12 @@ namespace FarmingFeedingAppv2
                 //it crashes if there is no i list
                 try
                 {
-                    foreach (int item in sm.CalculatTotalCostPerBreedPerDay(sm.CostPerGram())[sm.getSheepSorter().IndexOf(i)])
+                    foreach (int breedsConsumtion in sm.CalculatTotalCostPerBreedPerDay()[i])
                     {
-                        series[series.Count - 1].Points.Add(item);
+                       
+                            series[series.Count - 1].Points.Add(breedsConsumtion);
+                        
+                        
                     }
 	            }
 	            catch 
