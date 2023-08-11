@@ -17,6 +17,8 @@ namespace FarmingFeedingAppv2
         {
             this.sm = sm;
             InitializeComponent();
+            this.MaximizeBox = false; ;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
 
         private void bunAddSheep_Click(object sender, EventArgs e)
@@ -24,6 +26,7 @@ namespace FarmingFeedingAppv2
             // hides form and then opens a new form
             this.Hide();
             AddSheep myNewForm = new AddSheep(sm);
+            
             myNewForm.Closed += (s, args) => this.Close();
             myNewForm.Show();
         }

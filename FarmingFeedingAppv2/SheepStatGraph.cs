@@ -17,6 +17,8 @@ namespace FarmingFeedingAppv2
         {
             this.sm =sm;
             InitializeComponent();
+            this.MaximizeBox = false; ;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
 
         private void bunHome_Click(object sender, EventArgs e)

@@ -117,4 +117,124 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblHome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Modern No. 20, 35.9999962pt, style=Bold</value>
+  </data>
+  <data name="lblHome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <data name="lblHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>776, 139</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblHome.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblHome.Text" xml:space="preserve">
+    <value>Sheep Feeding App</value>
+  </data>
+  <data name="lblHome.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblHome.Name" xml:space="preserve">
+    <value>lblHome</value>
+  </data>
+  <data name="&gt;&gt;lblHome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHome.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblHome.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bunAddSheep.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="bunAddSheep.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Modern No. 20, 26.25pt</value>
+  </data>
+  <data name="bunAddSheep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 157</value>
+  </data>
+  <data name="bunAddSheep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>381, 104</value>
+  </data>
+  <data name="bunAddSheep.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="bunAddSheep.Text" xml:space="preserve">
+    <value>Add Sheep</value>
+  </data>
+  <data name="&gt;&gt;bunAddSheep.Name" xml:space="preserve">
+    <value>bunAddSheep</value>
+  </data>
+  <data name="&gt;&gt;bunAddSheep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bunAddSheep.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bunAddSheep.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bunSheepStats.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="bunSheepStats.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Modern No. 20, 26.25pt</value>
+  </data>
+  <data name="bunSheepStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>209, 301</value>
+  </data>
+  <data name="bunSheepStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 104</value>
+  </data>
+  <data name="bunSheepStats.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bunSheepStats.Text" xml:space="preserve">
+    <value>Sheep Stats</value>
+  </data>
+  <data name="&gt;&gt;bunSheepStats.Name" xml:space="preserve">
+    <value>bunSheepStats</value>
+  </data>
+  <data name="&gt;&gt;bunSheepStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bunSheepStats.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bunSheepStats.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

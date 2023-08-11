@@ -131,7 +131,7 @@ namespace FarmingFeedingAppv2
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].Size = new System.Drawing.Size(200, 38);
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].TabIndex = tabIndex;
                 tabIndex++;
-                this.lblFoodConsumed[lblFoodConsumed.Count - 1].Text = "Food Consumed Day " + i;
+                this.lblFoodConsumed[lblFoodConsumed.Count - 1].Text = "Food Consumed Day in grams" + i;
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].AutoSize = true;
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 

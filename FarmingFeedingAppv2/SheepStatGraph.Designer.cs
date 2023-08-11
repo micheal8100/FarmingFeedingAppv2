@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FarmingFeedingAppv2
 {
     partial class SheepStatGraph
@@ -112,35 +113,25 @@ namespace FarmingFeedingAppv2
             this.chart1.Titles.Add(title2);
             this.chart1.Titles.Add(title3);
             List<int> seriesColor = new List<int> { };
-            
+            // creating the series for all different sheep breeds 
             for (int i = 0; i < sm.GetSheepBreeds().Count; i++)
             {
                 series.Add(new System.Windows.Forms.DataVisualization.Charting.Series());
                 series[series.Count - 1].ChartArea = "ChartArea1";
                 series[series.Count - 1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 series[series.Count - 1].Legend = "Legend1";
-                series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
- 
-                //it crashes if there is no i list
-                try
-                {
-                    foreach (int breedsConsumtion in sm.CalculatTotalCostPerBreedPerDay()[i])
-                    {
-                       
+                series[series.Count - 1].Name = sm.GetSheepBreeds()[i];    
+                // adding the sheep breeds points
+                foreach (int breedsConsumtion in sm.CalculatTotalCostPerBreedPerDay()[i])
+                {                       
                             series[series.Count - 1].Points.Add(breedsConsumtion);
-                        
-                        
-                    }
-	            }
-	            catch 
-	            {
-	            }
-
+                }
                 this.chart1.Series.Add(series[series.Count - 1]);
             }
             // 
             // SheepStatGraph
             // 
+            this.BackgroundImage = global::FarmingFeedingAppv2.Properties.Resources.backroundImageFarmingApp;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.bunSheepStats);

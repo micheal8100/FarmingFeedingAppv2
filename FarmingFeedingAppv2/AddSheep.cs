@@ -20,6 +20,8 @@ namespace FarmingFeedingAppv2
         {
             this.sm = sm;
             InitializeComponent();
+            this.MaximizeBox = false; ;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             // list for food counsumded
             List<int> foodConsumed = new List<int>();
             //populates the cmbsheepbreeds combo box
