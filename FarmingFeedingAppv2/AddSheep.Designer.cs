@@ -56,6 +56,7 @@ namespace FarmingFeedingAppv2
             // 
             this.lblAddSheep.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddSheep.Location = new System.Drawing.Point(12, 9);
+            this.lblAddSheep.BackColor = System.Drawing.Color.Transparent; 
             this.lblAddSheep.Name = "lblAddSheep";
             this.lblAddSheep.Size = new System.Drawing.Size(262, 175);
             this.lblAddSheep.TabIndex = tabIndex;
@@ -68,6 +69,7 @@ namespace FarmingFeedingAppv2
             this.lblAddSheep.AutoSize = true;
             this.lblSheepBreeds.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSheepBreeds.Location = new System.Drawing.Point(17, 159);
+            this.lblSheepBreeds.BackColor = System.Drawing.Color.Transparent;
             this.lblSheepBreeds.Name = "lblSheepBreeds";
             this.lblSheepBreeds.Size = new System.Drawing.Size(134, 42);
             this.lblSheepBreeds.TabIndex = tabIndex;
@@ -89,6 +91,7 @@ namespace FarmingFeedingAppv2
             // 
             this.lblSheepAge.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSheepAge.Location = new System.Drawing.Point(17, 244);
+            this.lblSheepAge.BackColor = System.Drawing.Color.Transparent;
             this.lblSheepAge.Name = "lblSheepAge";
             this.lblSheepAge.Size = new System.Drawing.Size(134, 42);
             this.lblSheepAge.TabIndex = tabIndex;
@@ -121,7 +124,7 @@ namespace FarmingFeedingAppv2
                 lblfoodConsumedY += 70;
                 if (lblfoodConsumedY > 339)
                 {
-                    foddConsumedX = 550;
+                    foddConsumedX = 500;
                     lblfoodConsumedY = 129;
                 }
                 lblFoodConsumed.Add(new System.Windows.Forms.Label());
@@ -131,10 +134,10 @@ namespace FarmingFeedingAppv2
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].Size = new System.Drawing.Size(200, 38);
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].TabIndex = tabIndex;
                 tabIndex++;
-                this.lblFoodConsumed[lblFoodConsumed.Count - 1].Text = "Food Consumed Day in grams" + i;
+                this.lblFoodConsumed[lblFoodConsumed.Count - 1].Text = "Food Consumed Day " + i + " In Grams";
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].AutoSize = true;
                 this.lblFoodConsumed[lblFoodConsumed.Count - 1].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                
+                this.lblFoodConsumed[lblFoodConsumed.Count - 1].BackColor = System.Drawing.Color.Transparent;
             }
             // 
             // nudFoodConsumed
@@ -147,7 +150,7 @@ namespace FarmingFeedingAppv2
                 nudfoodConsumedY += 70;
                 if (nudfoodConsumedY > 384)
                 {
-                    foddConsumedX = 550;
+                    foddConsumedX = 500;
                     nudfoodConsumedY = 165;
                 }
                 nudFoodConsumed.Add(new System.Windows.Forms.NumericUpDown());
@@ -168,7 +171,8 @@ namespace FarmingFeedingAppv2
             // 
             // bunCancel
             // 
-            this.bunCancel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            this.bunCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunCancel.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunCancel.Location = new System.Drawing.Point(648, 380);
@@ -182,7 +186,8 @@ namespace FarmingFeedingAppv2
             // 
             // bunConfirm
             // 
-            this.bunConfirm.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            this.bunConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunConfirm.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunConfirm.Location = new System.Drawing.Point(500, 380);
@@ -199,6 +204,8 @@ namespace FarmingFeedingAppv2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::FarmingFeedingAppv2.Properties.Resources.backroundImageFarmingApp;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Controls.Add(this.bunConfirm);
             this.Controls.Add(this.bunCancel);
           

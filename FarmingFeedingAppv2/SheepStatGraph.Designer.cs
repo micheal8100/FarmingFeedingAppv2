@@ -57,7 +57,8 @@ namespace FarmingFeedingAppv2
             // 
             // bunHome
             // 
-            this.bunHome.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            this.bunHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunHome.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunHome.Location = new System.Drawing.Point(620, 375);
@@ -76,10 +77,12 @@ namespace FarmingFeedingAppv2
             this.label1.Size = new System.Drawing.Size(765, 90);
             this.label1.TabIndex = 1;
             this.label1.Text = "Sheep Stat Graphs";
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             // 
             // bunSheepStats
             // 
-            this.bunSheepStats.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunSheepStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            this.bunSheepStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunSheepStats.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunSheepStats.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunSheepStats.Location = new System.Drawing.Point(620, 306);
@@ -93,6 +96,7 @@ namespace FarmingFeedingAppv2
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
@@ -101,6 +105,7 @@ namespace FarmingFeedingAppv2
             this.chart1.Size = new System.Drawing.Size(602, 356);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
             title1.Name = "Title";
             title1.Text = "Sheep breeds food consumed";
             title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
@@ -120,7 +125,8 @@ namespace FarmingFeedingAppv2
                 series[series.Count - 1].ChartArea = "ChartArea1";
                 series[series.Count - 1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
                 series[series.Count - 1].Legend = "Legend1";
-                series[series.Count - 1].Name = sm.GetSheepBreeds()[i];    
+                series[series.Count - 1].Name = sm.GetSheepBreeds()[i];
+                
                 // adding the sheep breeds points
                 foreach (int breedsConsumtion in sm.CalculatTotalCostPerBreedPerDay()[i])
                 {                       
@@ -131,7 +137,9 @@ namespace FarmingFeedingAppv2
             // 
             // SheepStatGraph
             // 
+            
             this.BackgroundImage = global::FarmingFeedingAppv2.Properties.Resources.backroundImageFarmingApp;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.bunSheepStats);

@@ -39,6 +39,7 @@ namespace FarmingFeedingAppv2
             // 
             // lblSheepStats
             // 
+            this.lblSheepStats.BackColor = System.Drawing.Color.Transparent;
             this.lblSheepStats.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSheepStats.Location = new System.Drawing.Point(12, 9);
             this.lblSheepStats.Name = "lblSheepStats";
@@ -49,6 +50,7 @@ namespace FarmingFeedingAppv2
             // 
             // lblAllSummary
             // 
+            this.lblAllSummary.BackColor = System.Drawing.Color.Transparent;
             this.lblAllSummary.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAllSummary.Location = new System.Drawing.Point(12, 90);
             this.lblAllSummary.Name = "lblAllSummary";
@@ -57,7 +59,8 @@ namespace FarmingFeedingAppv2
             // 
             // bunHome
             // 
-            this.bunHome.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            this.bunHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunHome.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunHome.Location = new System.Drawing.Point(599, 355);
@@ -70,7 +73,8 @@ namespace FarmingFeedingAppv2
             // 
             // bunSheepStatGraph
             // 
-            this.bunSheepStatGraph.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunSheepStatGraph.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            this.bunSheepStatGraph.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunSheepStatGraph.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunSheepStatGraph.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunSheepStatGraph.Location = new System.Drawing.Point(599, 278);
@@ -83,9 +87,10 @@ namespace FarmingFeedingAppv2
             // 
             // SheepStats
             // 
-            this.BackgroundImage = global::FarmingFeedingAppv2.Properties.Resources.backroundImageFarmingApp;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::FarmingFeedingAppv2.Properties.Resources.backroundImageFarmingApp;
+
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bunSheepStatGraph);
             this.Controls.Add(this.bunHome);
