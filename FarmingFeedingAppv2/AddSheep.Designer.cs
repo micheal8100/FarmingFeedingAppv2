@@ -172,7 +172,6 @@ namespace FarmingFeedingAppv2
             // bunCancel
             // 
             this.bunCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
-            this.bunCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunCancel.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunCancel.Location = new System.Drawing.Point(648, 380);
@@ -187,7 +186,6 @@ namespace FarmingFeedingAppv2
             // bunConfirm
             // 
             this.bunConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
-            this.bunConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunConfirm.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunConfirm.Location = new System.Drawing.Point(500, 380);
@@ -206,9 +204,9 @@ namespace FarmingFeedingAppv2
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.BackgroundImage = global::FarmingFeedingAppv2.Properties.Resources.backroundImageFarmingApp;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.Controls.Add(this.bunConfirm);
             this.Controls.Add(this.bunCancel);
-          
             this.Controls.Add(this.nudSheepAge);
             this.Controls.Add(this.lblSheepAge);
             this.Controls.Add(this.lblSheepBreeds);

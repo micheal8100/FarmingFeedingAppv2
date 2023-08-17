@@ -39,14 +39,12 @@ namespace FarmingFeedingAppv2
             // 
             this.lblHome.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lblHome, "lblHome");
-            this.lblHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.lblHome.Name = "lblHome";
             // 
             // bunAddSheep
             // 
             this.bunAddSheep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
             resources.ApplyResources(this.bunAddSheep, "bunAddSheep");
-            this.bunAddSheep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunAddSheep.Name = "bunAddSheep";
             this.bunAddSheep.UseVisualStyleBackColor = false;
             this.bunAddSheep.Click += new System.EventHandler(this.bunAddSheep_Click);
@@ -55,7 +53,6 @@ namespace FarmingFeedingAppv2
             // 
             this.bunSheepStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
             resources.ApplyResources(this.bunSheepStats, "bunSheepStats");
-            this.bunSheepStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunSheepStats.Name = "bunSheepStats";
             this.bunSheepStats.UseVisualStyleBackColor = false;
             this.bunSheepStats.Click += new System.EventHandler(this.bunSheepStats_Click);
@@ -63,6 +60,7 @@ namespace FarmingFeedingAppv2
             // Home
             // 
             this.AllowDrop = true;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;

@@ -58,7 +58,6 @@ namespace FarmingFeedingAppv2
             // bunHome
             // 
             this.bunHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
-            this.bunHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunHome.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunHome.Location = new System.Drawing.Point(620, 375);
@@ -82,7 +81,6 @@ namespace FarmingFeedingAppv2
             // bunSheepStats
             // 
             this.bunSheepStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
-            this.bunSheepStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.bunSheepStats.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bunSheepStats.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunSheepStats.Location = new System.Drawing.Point(620, 306);
@@ -96,9 +94,12 @@ namespace FarmingFeedingAppv2
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            legend1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
+            legend1.BorderColor = System.Drawing.Color.Black;
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(13, 75);
             this.chart1.Name = "chart1";
@@ -108,16 +109,26 @@ namespace FarmingFeedingAppv2
             this.chart1.BackColor = System.Drawing.Color.Transparent;
             title1.Name = "Title";
             title1.Text = "Sheep breeds food consumed";
+            title1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
+            title1.BorderColor = System.Drawing.Color.Black;
             title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             title2.Name = "food consumed";
             title2.Text = "food consumed";
+            title2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            title2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
+            title2.BorderColor = System.Drawing.Color.Black;
             title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             title3.Name = "Day";
             title3.Text = "Day";
+            title3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(217)))), ((int)(((byte)(186)))));
+            title3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
+            title3.BorderColor = System.Drawing.Color.Black;
             this.chart1.Titles.Add(title1);
             this.chart1.Titles.Add(title2);
             this.chart1.Titles.Add(title3);
             List<int> seriesColor = new List<int> { };
+            
             // creating the series for all different sheep breeds 
             for (int i = 0; i < sm.GetSheepBreeds().Count; i++)
             {
@@ -137,7 +148,7 @@ namespace FarmingFeedingAppv2
             // 
             // SheepStatGraph
             // 
-            
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.BackgroundImage = global::FarmingFeedingAppv2.Properties.Resources.backroundImageFarmingApp;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ClientSize = new System.Drawing.Size(800, 450);

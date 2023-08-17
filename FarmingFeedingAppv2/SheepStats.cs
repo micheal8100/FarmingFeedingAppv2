@@ -20,6 +20,7 @@ namespace FarmingFeedingAppv2
             InitializeComponent();
             //populates the lblBreedSum lable with the sumarry in sm
             lblAllSummary.Text = sm.allSummary();
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
             this.MaximizeBox = false; ;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 
