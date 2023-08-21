@@ -104,7 +104,7 @@ namespace FarmingFeedingAppv2
             this.nudSheepAge.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudSheepAge.Location = new System.Drawing.Point(17, 289);
             this.nudSheepAge.Maximum = new decimal(new int[] {
-            50,
+            25,
             0,
             0,
             0});

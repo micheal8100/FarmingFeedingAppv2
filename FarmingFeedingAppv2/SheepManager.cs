@@ -30,47 +30,24 @@ namespace FarmingFeedingAppv2
         {
             return sheepSorter;
         }
-        
-        // Check Age 0 < x > 40
-        public bool CheckAge(int age)
-        {
-            if (age > 0 && age < 30)
-            {
-                return true;
-            }
-            return false;
-        }
         //based on foodPerDay List Determines if a sheep is healthy
         public string determineHealth(float overWeeksFood)
         {
-            if (overWeeksFood > 4500)
+            // eating too much if over 5000
+            if (overWeeksFood > 5000)
             {
                 return "Eating to much food";
             }
-            else if (overWeeksFood < 2100)
+            // eating to little if under 2000
+            else if (overWeeksFood < 2000)
             {
                 return "Eating to little food";
             }
+            // its in a healthy range
             else
             {
                 return "Eating average food";
             }
-        }
-        // checks to see if any value out of the range 
-        public bool checkFoodPerDay(List<int> foodPerDay)
-        {
-            for (int i = 0; i < 6; i++)
-            {
-                if (foodPerDay[i] >= 0 && foodPerDay[i] < 5000)
-                {
-
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return true;
         }
         // returns a list of the food per day per breed for graph
         public List<int[]> CalculatTotalCostPerBreedPerDay()
@@ -78,27 +55,28 @@ namespace FarmingFeedingAppv2
             //a list to hold data to return
             List<int[]> CostPerBreedPerDay = new List<int[]>();
 
-            int index = 0;
+            // lopes though all the sheep breeds and runs the TotalConsumtionPerDay method for that breed
+            //and then adds them into the costPerBreedPerDay list
             foreach (string breed in sheepBreeds)
             {
-                
                     CostPerBreedPerDay.Add(TotalConsumtionPerDay(breed)) ;
-             
-                
-
             }
             return CostPerBreedPerDay; 
         }
 
         private int[] TotalConsumtionPerDay(string breed)
         {
+            // list to hold values or if thier arent any makes it = to 0,0,0,0...
             int[] breedConsumtionPerDay = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
 
+            // lops though all sheeps in sheep
             foreach (Sheep sheep in sheeps)
             {
+                //checks if the sheep is = to breed
                 if (sheep.getBreed().Equals(breed))
                 {
                     int index = 0;
+                    // makes breedComsumtionPerDay = to the sum of all getfoodPerDay for breed
                     foreach (int food in sheep.getFoodPerDay())
                     {
                         breedConsumtionPerDay[index] += food;
@@ -127,11 +105,13 @@ namespace FarmingFeedingAppv2
         // populates the weeklyCostPerBreed list with the cost per breed 
         public List<float> CalculattotalCostPerBreed()
         {
+            // list to hold return values
             List<float> weeklyCostPerBreed = new List<float>() { 0, 0, 0, 0, 0 };
             int sheepCount = 0;
-            // so i gose though every sheep
+            // lops though all sheep 
             foreach (Sheep sheep in sheeps)
             {
+                
                 for (int i = 0; i < sheepBreeds.Count(); i++)
                 {
                     if (sheeps[sheepCount].getBreed() == sheepBreeds[i])
@@ -155,7 +135,7 @@ namespace FarmingFeedingAppv2
         {
 
             string breedSum = "";
-
+            // lops though and makes all summary strings for eacxh breed
             for (int i = 0; i < sheepBreeds.Count; i++)
             {
                 breedSum += $"{sheepBreeds[i]}: ${CalculattotalCostPerBreed()[i]}\n";
