@@ -87,33 +87,6 @@ namespace FarmingFeedingAppv2
                 
 
             }
-
-            //sheepSorter.Clear();
-            //foreach (Sheep sheep in sheeps)
-            //{
-            //    for (int i = 0; i < sheepBreeds.Count(); i++)
-            //    {
-            //        // to check if its the breed of the sheep
-            //        if (sheep.getBreed() == sheepBreeds[i])
-            //        {
-            //            //check if the user has allready added this sheep breed before
-            //            if (sheepSorter.Contains(i))
-            //            {
-            //                // so that it stays in one list the for loop adds them together
-            //                for (int y = 0; y < CostPerBreedPerDay[sheepSorter.IndexOf(i)].Count; y++)
-            //                {
-            //                    CostPerBreedPerDay[sheepSorter.IndexOf(i)][y] += sheep.getFoodPerDay()[y];
-            //                }
-            //            }
-            //            else
-            //            {
-            //                //adding so that we can keep every thing in one list the next time we add a sheep with this breed 
-            //                sheepSorter.Add(i);
-            //                CostPerBreedPerDay.Add(sheep.getFoodPerDay());
-            //            }
-            //        }
-            //    }
-            //}
             return CostPerBreedPerDay; 
         }
 
