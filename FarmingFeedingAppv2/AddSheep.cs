@@ -71,11 +71,11 @@ namespace FarmingFeedingAppv2
             {
                 //adds sheep to sheeps list in Sheep manager class
                 Sheep sheep = new Sheep((int)nudSheepAge.Value, sm.GetSheepBreeds()[cmbSheepBreeds.SelectedIndex], FoodConsumed);
-                sm.addSheep(sheep);
+                sm.AddSheep(sheep);
 
                 //Display summary via a message box
-                string message = sheep.summary(sm.CostPerGram(), sm.NumberOfSheep(), sm.determineHealth(sheep.overWeeksFood()));
-                string title = sheep.idGenorater(sm.NumberOfSheep()) + " Summary";
+                string message = sheep.Summary(sm.CostPerGram(), sm.NumberOfSheep(), sm.DetermineHealth(sheep.OverWeeksFood()));
+                string title = sheep.IdGenorater(sm.NumberOfSheep()) + " Summary";
                 MessageBox.Show(message, title);
 
                 // hides form and then opens a new form

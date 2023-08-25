@@ -18,10 +18,17 @@ namespace FarmingFeedingAppv2
         {
             this.sm = sm;
             InitializeComponent();
+
             //populates the lblBreedSum lable with the sumarry in sm
-            lblAllSummary.Text = sm.allSummary();
+            lblAllSummary.Text = sm.AllSummary();
+
+            //changes the font color for all writing in this form 
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(89)))), ((int)(((byte)(77)))));
+
+            // makes it so the user cant maximum the form
             this.MaximizeBox = false; ;
+
+            // changes the broder style for the form
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 
         }

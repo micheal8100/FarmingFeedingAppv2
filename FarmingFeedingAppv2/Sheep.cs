@@ -35,30 +35,30 @@ namespace FarmingFeedingAppv2
         }
 
         // Returns the value in the private age varible
-        public int getAge()
+        public int GetAge()
         {
             return this.age;
         }
         // Returns the value in the private age varible
-        public List<int> getFoodPerDay()
+        public List<int> GetFoodPerDay()
         {
             return FoodPerDay;
         }
         // returns the value in the breed variable
-        public string getBreed()
+        public string GetBreed()
         {
             return this.breed;
         }
      
         // creates an ID 
-        public string idGenorater(int NumberOfSheep)
+        public string IdGenorater(int NumberOfSheep)
         {
             id = breed.Substring(0, 2).ToUpper() + NumberOfSheep + $"#{age}";
             return id;
         }
 
         // returns total food over the week
-        public float overWeeksFood()
+        public float OverWeeksFood()
         {
             float OverWeek = 0;
             for (int i = 0; i < FoodPerDay.Count; i++)
@@ -68,7 +68,7 @@ namespace FarmingFeedingAppv2
             return OverWeek;
         }
         //Creates a Food Summary for the week
-        private string foodSum()
+        private string FoodSum()
         {
             string foodSum = "";
             for (int i = 0; i < FoodPerDay.Count; i++)
@@ -78,15 +78,15 @@ namespace FarmingFeedingAppv2
             return foodSum;
         }
         // creats a summary of the cost per sheep
-        public float costSum(float costPerGram)
+        public float CostSum(float costPerGram)
         {
-            return (float)Math.Round((overWeeksFood() * costPerGram), 2);
+            return (float)Math.Round((OverWeeksFood() * costPerGram), 2);
         }
         //Creates a over all food and Cost summary
-        public string summary(float costPerGram, int NumberOfSheep, string determineHealth)
+        public string Summary(float costPerGram, int NumberOfSheep, string determineHealth)
         {
-            return "Breed: " + breed + "\n" + "ID: " + idGenorater(NumberOfSheep) + "\n" + determineHealth + "\n\n" + foodSum() + "\n" +
-               "Total Food Consumed: " + overWeeksFood() + "\nCost: $" + costSum(costPerGram) + "\n";
+            return "Breed: " + breed + "\n" + "ID: " + IdGenorater(NumberOfSheep) + "\n" + determineHealth + "\n\n" + FoodSum() + "\n" +
+               "Total Food Consumed: " + OverWeeksFood() + "\nCost: $" + CostSum(costPerGram) + "\n";
         }
         public override string ToString()
         {

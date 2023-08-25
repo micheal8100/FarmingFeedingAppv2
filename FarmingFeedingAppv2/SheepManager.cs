@@ -26,12 +26,12 @@ namespace FarmingFeedingAppv2
 
         }
         // gets the sheep sorter list
-        public List<int> getSheepSorter()
+        public List<int> GetSheepSorter()
         {
             return sheepSorter;
         }
         //based on foodPerDay List Determines if a sheep is healthy
-        public string determineHealth(float overWeeksFood)
+        public string DetermineHealth(float overWeeksFood)
         {
             // eating too much if over 5000
             if (overWeeksFood > 5000)
@@ -53,31 +53,31 @@ namespace FarmingFeedingAppv2
         public List<int[]> CalculatTotalCostPerBreedPerDay()
         {
             //a list to hold data to return
-            List<int[]> CostPerBreedPerDay = new List<int[]>();
+            List<int[]> costPerBreedPerDay = new List<int[]>();
 
             // lopes though all the sheep breeds and runs the TotalConsumtionPerDay method for that breed
             //and then adds them into the costPerBreedPerDay list
             foreach (string breed in sheepBreeds)
             {
-                    CostPerBreedPerDay.Add(TotalConsumtionPerDay(breed)) ;
+                    costPerBreedPerDay.Add(TotalConsumtionPerDay(breed)) ;
             }
-            return CostPerBreedPerDay; 
+            return costPerBreedPerDay; 
         }
 
         private int[] TotalConsumtionPerDay(string breed)
         {
-            // list to hold values or if thier arent any makes it = to 0,0,0,0...
+            // array to hold values or if their arent any makes it = to 0,0,0,0...
             int[] breedConsumtionPerDay = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
 
             // lops though all sheeps in sheep
             foreach (Sheep sheep in sheeps)
             {
                 //checks if the sheep is = to breed
-                if (sheep.getBreed().Equals(breed))
+                if (sheep.GetBreed().Equals(breed))
                 {
                     int index = 0;
-                    // makes breedComsumtionPerDay = to the sum of all getfoodPerDay for breed
-                    foreach (int food in sheep.getFoodPerDay())
+                    // makes breedComsumtionPerDay = to the sum of all sheeps getfoodPerDay in the provided breed
+                    foreach (int food in sheep.GetFoodPerDay())
                     {
                         breedConsumtionPerDay[index] += food;
                         index++;
@@ -91,14 +91,14 @@ namespace FarmingFeedingAppv2
         {
             return sheepBreeds;
         }
-        // stores the cost per 1g in a method so all calculations use the same number
+        // stores the cost per 1g in a method so all calculations use the same number 
         public float CostPerGram()
         {
             // 0.0015 is around the cost for 1 gram of grain 
             return 0.0015f;
         }
         // adds Sheep To The List Sheep list and runs the CalculattotalCostPerBreed() method
-        public void addSheep(Sheep Sheep)
+        public void AddSheep(Sheep Sheep)
         {
             sheeps.Add(Sheep);
         }
@@ -107,19 +107,23 @@ namespace FarmingFeedingAppv2
         {
             // list to hold return values
             List<float> weeklyCostPerBreed = new List<float>() { 0, 0, 0, 0, 0 };
-            int sheepCount = 0;
+            int breedIndex = 0;
             // lops though all sheep 
             foreach (Sheep sheep in sheeps)
             {
-                
-                for (int i = 0; i < sheepBreeds.Count(); i++)
+                //makes sure the index counter is = to 0
+                breedIndex = 0;
+                // lops though all the breeds
+                foreach (string breed in sheepBreeds)
                 {
-                    if (sheeps[sheepCount].getBreed() == sheepBreeds[i])
+                    //checks if the breeds are equal
+                    if (sheep.GetBreed().Equals(breed))
                     {
-                        weeklyCostPerBreed[i] += sheeps[sheepCount].costSum(CostPerGram());
+                        // adds it to the weeklyCostPerBreed list at Corect index
+                        weeklyCostPerBreed[breedIndex] += sheep.CostSum(CostPerGram());
                     }
+                    breedIndex++;
                 }
-                sheepCount++;
             }
             return weeklyCostPerBreed;
         }
@@ -131,11 +135,10 @@ namespace FarmingFeedingAppv2
         }
 
         // returns a cost sumary for all breeds 
-        public string allBreedCostSum( )
+        public string AllBreedCostSum( )
         {
-
             string breedSum = "";
-            // lops though and makes all summary strings for eacxh breed
+            // lops though and makes all summary strings for each breed
             for (int i = 0; i < sheepBreeds.Count; i++)
             {
                 breedSum += $"{sheepBreeds[i]}: ${CalculattotalCostPerBreed()[i]}\n";
@@ -144,7 +147,7 @@ namespace FarmingFeedingAppv2
             return breedSum;
         }
         // calculates the over cost for all sheep
-        public float overAllCost()
+        public float OverAllCost()
         {
             float totalCost = 0;
             foreach (float breedCost in CalculattotalCostPerBreed())
@@ -154,9 +157,9 @@ namespace FarmingFeedingAppv2
             return totalCost;
         }
         // Retruns a overall sumary of all added sheep
-        public string allSummary( )
+        public string AllSummary( )
         {
-            return "Weekly Feeding Cost Summary\n\n" + allBreedCostSum() + "\nOverall Cost: $" + overAllCost();
+            return "Weekly Feeding Cost Summary\n\n" + AllBreedCostSum() + "\nOverall Cost: $" + OverAllCost();
         }
        
     }
