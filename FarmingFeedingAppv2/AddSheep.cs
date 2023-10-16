@@ -14,16 +14,14 @@ namespace FarmingFeedingAppv2
     public partial class AddSheep : Form
     {
         
-        SheepManager sm;
-
+        readonly SheepManager sm;
+        //constructor - cronstructs an object of this class
         public AddSheep(SheepManager sm)
         {
             this.sm = sm;
             InitializeComponent();
             this.MaximizeBox = false; ;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            // list for food counsumded
-            List<int> foodConsumed = new List<int>();
             //populates the cmbsheepbreeds combo box
             for (int i = 0; i < sm.GetSheepBreeds().Count; i++)
             {
@@ -31,7 +29,7 @@ namespace FarmingFeedingAppv2
             }
         }
 
-        private void bunConfirm_Click(object sender, EventArgs e)
+        private void BunConfirm_Click(object sender, EventArgs e)
         {
             // creats a list for food consumed and populates it
             List<int> FoodConsumed = new List<int>();
@@ -74,7 +72,7 @@ namespace FarmingFeedingAppv2
                 sm.AddSheep(sheep);
 
                 //Display summary via a message box
-                string message = sheep.Summary(sm.CostPerGram(), sm.NumberOfSheep(), sm.DetermineHealth(sheep.OverWeeksFood()));
+                string message = sheep.Summary(sm.GetCostOfGrain(), sm.NumberOfSheep(), sm.DetermineHealth(sheep.OverWeeksFood()));
                 string title = sheep.IdGenorater(sm.NumberOfSheep()) + " Summary";
                 MessageBox.Show(message, title);
 
@@ -87,7 +85,7 @@ namespace FarmingFeedingAppv2
             }
         }
         // the button to cancel adding a sheep
-        private void bunCancel_Click(object sender, EventArgs e)
+        private void BunCancel_Click(object sender, EventArgs e)
         {
             // hides form and then opens a new form
             this.Hide();

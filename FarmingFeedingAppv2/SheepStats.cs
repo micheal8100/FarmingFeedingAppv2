@@ -13,7 +13,8 @@ namespace FarmingFeedingAppv2
     public partial class SheepStats : Form
     {
 
-        SheepManager sm;
+        readonly SheepManager sm;
+        //constructor - cronstructs an object of this class
         public SheepStats(SheepManager sm)
         {
             this.sm = sm;
@@ -33,7 +34,7 @@ namespace FarmingFeedingAppv2
 
         }
 
-        private void bunHome_Click(object sender, EventArgs e)
+        private void BunHome_Click(object sender, EventArgs e)
         {
             //closes form and opens a new one
             this.Hide();
@@ -42,7 +43,7 @@ namespace FarmingFeedingAppv2
             myNewForm.Show();
         }
 
-        private void bunSheepStatGraph_Click(object sender, EventArgs e)
+        private void BunSheepStatGraph_Click(object sender, EventArgs e)
         {
             //closes form and opens a new one
             this.Hide();

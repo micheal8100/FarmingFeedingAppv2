@@ -9,26 +9,24 @@ namespace FarmingFeedingAppv2
     public class SheepManager
     {
          // All Sheep Breeds My Program Acounts For
-        private List<string> sheepBreeds = new List<String>() { "Australian whites NZ", "Border Leicester", "Charollais"
+        private readonly List<string> SHEEPBREEDS = new List<String>() { "Australian whites NZ", "Border Leicester", "Charollais"
             , "Corriedale", "Awassi" };
-        //to fill the cost per breed per day list in order 
-
-        private List<int> sheepSorter = new List<int> { };
 
         // list of all animals 
         private List<Sheep> sheeps = new List<Sheep>();
        
-
+        // the cost per gram of grain
+        private readonly float GRAINCOST = 0.0015f;
 
         //constructor - cronstructs an object of this class
         public SheepManager()
         {
 
         }
-        // gets the sheep sorter list
-        public List<int> GetSheepSorter()
+        // gets the value of the constant GRAINCOST
+        public float GetCostOfGrain()
         {
-            return sheepSorter;
+            return GRAINCOST;
         }
         //based on foodPerDay List Determines if a sheep is healthy
         public string DetermineHealth(float overWeeksFood)
@@ -57,7 +55,7 @@ namespace FarmingFeedingAppv2
 
             // lopes though all the sheep breeds and runs the TotalConsumtionPerDay method for that breed
             //and then adds them into the costPerBreedPerDay list
-            foreach (string breed in sheepBreeds)
+            foreach (string breed in SHEEPBREEDS)
             {
                     costPerBreedPerDay.Add(TotalConsumtionPerDay(breed)) ;
             }
@@ -89,13 +87,7 @@ namespace FarmingFeedingAppv2
         // return sheepbreed list
         public List<string> GetSheepBreeds()
         {
-            return sheepBreeds;
-        }
-        // stores the cost per 1g in a method so all calculations use the same number 
-        public float CostPerGram()
-        {
-            // 0.0015 is around the cost for 1 gram of grain 
-            return 0.0015f;
+            return SHEEPBREEDS;
         }
         // adds Sheep To The List Sheep list and runs the CalculattotalCostPerBreed() method
         public void AddSheep(Sheep Sheep)
@@ -107,20 +99,20 @@ namespace FarmingFeedingAppv2
         {
             // list to hold return values
             List<float> weeklyCostPerBreed = new List<float>() { 0, 0, 0, 0, 0 };
-            int breedIndex = 0;
+            int breedIndex;
             // lops though all sheep 
             foreach (Sheep sheep in sheeps)
             {
                 //makes sure the index counter is = to 0
                 breedIndex = 0;
                 // lops though all the breeds
-                foreach (string breed in sheepBreeds)
+                foreach (string breed in SHEEPBREEDS)
                 {
                     //checks if the breeds are equal
                     if (sheep.GetBreed().Equals(breed))
                     {
                         // adds it to the weeklyCostPerBreed list at Corect index
-                        weeklyCostPerBreed[breedIndex] += sheep.CostSum(CostPerGram());
+                        weeklyCostPerBreed[breedIndex] += sheep.CostSum(GRAINCOST);
                     }
                     breedIndex++;
                 }
@@ -139,9 +131,9 @@ namespace FarmingFeedingAppv2
         {
             string breedSum = "";
             // lops though and makes all summary strings for each breed
-            for (int i = 0; i < sheepBreeds.Count; i++)
+            for (int i = 0; i < SHEEPBREEDS.Count; i++)
             {
-                breedSum += $"{sheepBreeds[i]}: ${CalculattotalCostPerBreed()[i]}\n";
+                breedSum += $"{SHEEPBREEDS[i]}: ${CalculattotalCostPerBreed()[i]}\n";
             }
 
             return breedSum;

@@ -12,7 +12,8 @@ namespace FarmingFeedingAppv2
 {
     public partial class Home : Form
     {
-        SheepManager sm;
+        readonly SheepManager sm;
+        //constructor - cronstructs an object of this class
         public Home(SheepManager sm)
         {
             this.sm = sm;
@@ -21,7 +22,7 @@ namespace FarmingFeedingAppv2
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
 
-        private void bunAddSheep_Click(object sender, EventArgs e)
+        private void BunAddSheep_Click(object sender, EventArgs e)
         {
             // hides form and then opens a new form
             this.Hide();
@@ -31,7 +32,7 @@ namespace FarmingFeedingAppv2
             myNewForm.Show();
         }
 
-        private void bunSheepStats_Click(object sender, EventArgs e)
+        private void BunSheepStats_Click(object sender, EventArgs e)
         {
             // hides form and then opens a new form
             this.Hide();

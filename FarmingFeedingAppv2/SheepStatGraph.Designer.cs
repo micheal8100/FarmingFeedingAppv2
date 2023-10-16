@@ -66,7 +66,7 @@ namespace FarmingFeedingAppv2
             this.bunHome.TabIndex = 0;
             this.bunHome.Text = "Home";
             this.bunHome.UseVisualStyleBackColor = false;
-            this.bunHome.Click += new System.EventHandler(this.bunHome_Click);
+            this.bunHome.Click += new System.EventHandler(this.BunHome_Click);
             // 
             // label1
             // 
@@ -89,7 +89,7 @@ namespace FarmingFeedingAppv2
             this.bunSheepStats.TabIndex = 2;
             this.bunSheepStats.Text = "Sheep Stats";
             this.bunSheepStats.UseVisualStyleBackColor = false;
-            this.bunSheepStats.Click += new System.EventHandler(this.bunSheepStats_Click);
+            this.bunSheepStats.Click += new System.EventHandler(this.BunSheepStats_Click);
             // 
             // chart1
             // 

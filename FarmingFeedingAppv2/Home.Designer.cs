@@ -47,7 +47,7 @@ namespace FarmingFeedingAppv2
             resources.ApplyResources(this.bunAddSheep, "bunAddSheep");
             this.bunAddSheep.Name = "bunAddSheep";
             this.bunAddSheep.UseVisualStyleBackColor = false;
-            this.bunAddSheep.Click += new System.EventHandler(this.bunAddSheep_Click);
+            this.bunAddSheep.Click += new System.EventHandler(this.BunAddSheep_Click);
             // 
             // bunSheepStats
             // 
@@ -55,7 +55,7 @@ namespace FarmingFeedingAppv2
             resources.ApplyResources(this.bunSheepStats, "bunSheepStats");
             this.bunSheepStats.Name = "bunSheepStats";
             this.bunSheepStats.UseVisualStyleBackColor = false;
-            this.bunSheepStats.Click += new System.EventHandler(this.bunSheepStats_Click);
+            this.bunSheepStats.Click += new System.EventHandler(this.BunSheepStats_Click);
             // 
             // Home
             // 

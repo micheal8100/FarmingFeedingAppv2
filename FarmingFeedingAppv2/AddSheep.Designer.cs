@@ -181,7 +181,7 @@ namespace FarmingFeedingAppv2
             tabIndex++;
             this.bunCancel.Text = "Cancel";
             this.bunCancel.UseVisualStyleBackColor = false;
-            this.bunCancel.Click += new System.EventHandler(this.bunCancel_Click);
+            this.bunCancel.Click += new System.EventHandler(this.BunCancel_Click);
             // 
             // bunConfirm
             // 
@@ -195,7 +195,7 @@ namespace FarmingFeedingAppv2
             tabIndex++;
             this.bunConfirm.Text = "Confirm";
             this.bunConfirm.UseVisualStyleBackColor = false;
-            this.bunConfirm.Click += new System.EventHandler(this.bunConfirm_Click);
+            this.bunConfirm.Click += new System.EventHandler(this.BunConfirm_Click);
             // 
             // AddSheep
             // 
